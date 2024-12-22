@@ -31,7 +31,7 @@ function App() {
 
   if (loading || !news) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="h-screen w-screen  flex items-center justify-center bg-background">
         <RefreshCcw className="w-6 h-6 animate-spin" />
       </div>
     );
