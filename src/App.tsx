@@ -6,9 +6,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { BarChart, PieChart, RefreshCcw, Newspaper } from 'lucide-react';
 import { fetchNewsData } from '@/lib/api';
-
+import { useTheme } from '@/hooks/use-theme';
 
 function App() {
+  useTheme();
   const [news, setNews] = useState<NewsResponse['news'] | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -30,15 +31,15 @@ function App() {
 
   if (loading || !news) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <RefreshCcw className="w-6 h-6 animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
-      <header className="border-b bg-background/50 backdrop-blur-sm sticky top-0 z-10">
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Newspaper className="w-6 h-6 text-primary" />

@@ -27,12 +27,12 @@ export function AnalysisView({ news }: AnalysisViewProps) {
   const COLORS = ['#22c55e', '#3b82f6', '#ef4444'];
 
   return (
-    <div className="p-6">
-      <Card className="p-6 bg-gradient-to-br from-card to-muted">
-        <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
+    <div className="w-screen h-screen overflow-hidden">
+      <Card className="w-[50%] ml-7 mt-10 h-[70%]  from-card to-muted">
+        <h2 className="text-2xl font-semibold p-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
           Sentiment Distribution
         </h2>
-        <div className="h-[400px]">
+        <div className="h-[calc(100%-6rem)]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
