@@ -1,8 +1,10 @@
+export type Sentiment = 'positive' | 'negative' | 'neutral';
+
 export interface NewsItem {
   id: string;
   title: string;
   content: string;
-  sentiment: 'positive' | 'negative' | 'neutral';
+  sentiment: Sentiment;
   date: string;
 }
 
