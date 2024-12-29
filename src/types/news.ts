@@ -5,6 +5,7 @@ export interface NewsItem {
   title: string;
   content: string;
   sentimentr: Sentiment;
+  sentiment?: Sentiment;
   date: string;
   img?: string;
   newsUrl?: string;
