@@ -4,7 +4,7 @@ export interface NewsItem {
   id: string;
   title: string;
   content: string;
-  sentiment: Sentiment;
+  sentimentr: Sentiment;
   date: string;
   img?: string;
   newsUrl?: string;

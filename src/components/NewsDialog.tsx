@@ -18,7 +18,7 @@ interface NewsDialogProps {
 export function NewsDialog({ item, open, onOpenChange }: NewsDialogProps) {
   if (!item) return null;
 
-  const getSentimentConfig = (sentiment: NewsItem["sentiment"]) => {
+  const getSentimentConfig = (sentiment: NewsItem["sentimentr"]) => {
     switch (sentiment) {
       case "positive":
         return {
@@ -40,8 +40,8 @@ export function NewsDialog({ item, open, onOpenChange }: NewsDialogProps) {
         };
     }
   };
-
-  const config = getSentimentConfig(item.sentiment);
+console.log("item:", item);
+  const config = getSentimentConfig(item.sentimentr);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -51,7 +51,7 @@ export function NewsDialog({ item, open, onOpenChange }: NewsDialogProps) {
           <div className="flex items-center gap-2 mb-2">
             <Badge variant="secondary" className={config.badge}>
               <span className={`mr-1 ${config.color}`}>{config.icon}</span>
-              {item.sentiment.charAt(0).toUpperCase() + item.sentiment.slice(1)}
+              {item.sentimentr.charAt(0).toUpperCase() + item.sentimentr.slice(1)}
             </Badge>
           </div>
           <div >
