@@ -1,6 +1,7 @@
 import {  NewsResponse } from '@/types/news';
 // import { mockNews } from './mock-data';
-import Sentiment from "sentiment";
+// import Sentiment from "sentiment";
+import getSentiment from "./sentiment";
 import axios from 'axios';
 const NEWS_API_KEY = "pub_6358169c5b1ba7a1c01654f9c30f1ff49a4b9";
 const NEWS_API_URL = "https://newsdata.io/api/1/latest";
@@ -57,17 +58,20 @@ async function fetchNewsPos() {
     }
   }
   
-  function getSentiment(text : string): "positive" | "negative" | "neutral" {
-    if (!text || typeof text !== "string") {
-      return "neutral";
-    }
-    const sentiment = new Sentiment();
-    const result = sentiment.analyze(text);
+  // function getSentiment(text : string): "positive" | "negative" | "neutral" {
+  //   if (!text || typeof text !== "string") {
+  //     return "neutral";
+  //   }
+  //   const sentiment = new Sentiment();
+  //   const result = sentiment.analyze(text);
   
-    if (result.score > 0) return "positive";
-    if (result.score < 0) return "negative";
-    return "neutral";
-  }
+  //   if (result.score > 0) return "positive";
+  //   if (result.score < 0) return "negative";
+  //   return "neutral";
+  // }
+
+  
+  
  export async function fetchNewsData(): Promise<NewsResponse> {
 //  const response = await axios.get<NewsResponse>('http://localhost:5000/api/news');
 //  console.log(response.data);
