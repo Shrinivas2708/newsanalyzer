@@ -7,9 +7,11 @@ import { Button } from '@/components/ui/button';
 import { BarChart, PieChart, RefreshCcw, Newspaper } from 'lucide-react';
 import { fetchNewsData } from '@/lib/api';
 import { useTheme } from '@/hooks/use-theme';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   useTheme();
+  const navigate = useNavigate();
   const [news, setNews] = useState<NewsResponse['news'] | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -41,7 +43,7 @@ function App() {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <Newspaper className="w-6 h-6 text-primary" />
             <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
               News Analysis Dashboard
